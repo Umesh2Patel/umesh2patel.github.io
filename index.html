@@ -1,78 +1,541 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Umesh Patel</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umesh Patel | Staff Software Engineer - Distributed Systems & Cloud Architecture</title>
+    
+    <!-- Meta Descriptions & Open Graph -->
+    <meta name="description" content="Portfolio of Umesh Patel, Staff Software Engineer with 10+ years of experience in Spring Boot, Distributed Systems, Kafka, Elasticsearch, AWS, Kubernetes, and GenAI integrations.">
+    <meta name="keywords" content="Umesh Patel, Staff Software Engineer, Java Developer, Spring Boot, Kafka, Elasticsearch, AWS, GenAI, eBay, Moody's, Visa, Walmart Labs">
+    <meta name="author" content="Umesh Patel">
+    
+    <meta property="og:title" content="Umesh Patel | Staff Software Engineer">
+    <meta property="og:description" content="10+ years of enterprise software engineering, distributed event processing, and cloud native architecture.">
+    <meta property="og:image" content="img/DSC_0726-2.jpg">
+    <meta property="og:url" content="http://umeshpatel.info">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta property='og:title' content='Umesh - Portfolio'/>
-    <meta property='og:image' content='img/DSC_0726-2.jpg'/>
-    <meta property='og:description' content='Umesh Patel, Software Engineer'/>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-    </video>
-    <div class="container">
-            <div class = "center">
-                <img class="profile-picture"  src="img/DSC_0726-2.jpg" width="200" />
-            </div>
-            <div class = "center">
-                <h1 class="display-3">Umesh Patel</h1>
-            </div>
-            <div class = "center">
-                <h2>Software Engineer</h2>
-            </div>
-            <div class = "center">
-                <ul class="social-links">
-                    <li><a href="https://github.com/Umesh2Patel">Github</a></li>
-                    <li><a href="https://www.linkedin.com/in/patelumesh/">LinkedIn</a></li>
-                    <li><a href="https://medium.com/@umeshp2003">Medium</a></li>
-                </ul>
-            </div>
-    </div>
 
-</header>
-<div>
-    <br />
-</div>
-<section class="my-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto bio">
-                <p>I am experienced software engineer with a demonstrated history of working in the eCommerce , telecommunication  and financial industry.
-                    Skilled in python, java, databases, machine learning, deep learning, block-chain. Strong engineering professional with a master of science (MS)
-                    focused in electrical engineering from University of Bridgeport. I also like sports, permaculture, meditation and more. This is my personal website. Thank you for visiting my website.</p>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <div class="logo-badge">UP</div>
+                <span>Umesh<span class="gradient-text">.dev</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Specialties</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <button onclick="copyEmail()" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </div>
-</section>
-<!--<div class="wrapper">-->
-    <!--&lt;!&ndash;<img src="img/IMG_4156.jpg" alt="Notebook" style="width:100%;">&ndash;&gt;-->
-    <!--<div class="left">-->
-        <!--<img class="profile-picture" src="img/profile.JPG" width="200" />-->
-        <!--<h1 class="name">Umesh Patel</h1>-->
-        <!--<h4 class="subtitle">Automation Engineer</h4>-->
-    <!--</div>-->
-    <!--<div class="right">-->
-        <!--&lt;!&ndash;<p class="bio">I am experienced automation engineer with a demonstrated history of working in the eCommerce , telecommunication  and financial industry.&ndash;&gt;-->
-            <!--&lt;!&ndash;Skilled in python, javascript, java, selenium, databases, machine learning, deep learning, block-chain. Strong engineering professional with a master of science (MS)&ndash;&gt;-->
-            <!--&lt;!&ndash;focused in electrical engineering from university of Bridgeport. I also like sports, permaculture, meditation and more.&ndash;&gt;-->
-            <!--&lt;!&ndash;This is my personal website. Thank you for visiting my website.&ndash;&gt;-->
-        <!--&lt;!&ndash;</p>&ndash;&gt;-->
+    </header>
 
-        <!--<ul class="social-links">-->
-            <!--<li><a href="https://github.com/Umesh2Patel">Github</a></li>-->
-            <!--<li><a href="https://www.linkedin.com/in/patelumesh/">LinkedIn</a></li>-->
-            <!--<li><a href="https://medium.com/@umeshp2003">Medium</a></li>-->
-        <!--</ul>-->
-        <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-    <!--</div>-->
-<!--</div>-->
-<!--<script>alert('Random Javascript!');</script>-->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span> Staff Software Engineer | 10+ Yrs Exp
+                    </div>
+
+                    <h1 class="hero-title">
+                        Building Scalable <span class="gradient-text">Cloud & Distributed</span> Systems
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Experienced Staff Software Engineer specializing in enterprise Java/Kotlin, Spring Boot, event-driven streaming with Apache Kafka, high-performance Elasticsearch, AWS Cloud Architecture, and GenAI developer efficiency tools.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#experience" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i> View Career Experience
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3><span class="counter" data-target="10" data-suffix="+">0</span></h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3><span class="counter" data-target="6" data-suffix="+">0</span></h3>
+                            <p>Tech Enterprises</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3><span class="counter" data-target="100" data-suffix="M+">0</span></h3>
+                            <p>Users Scaled</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3><span class="counter" data-target="100" data-suffix="%">0</span></h3>
+                            <p>Cloud Native</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card-container">
+                    <div class="floating-pill pill-1">
+                        <i class="fab fa-java" style="color: #f89820;"></i> Java & Spring Boot
+                    </div>
+                    <div class="floating-pill pill-2">
+                        <i class="fas fa-stream" style="color: #008080;"></i> Apache Kafka
+                    </div>
+                    <div class="floating-pill pill-3">
+                        <i class="fas fa-robot" style="color: #10b981;"></i> GenAI & LLM Tools
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-img-wrapper">
+                            <img src="img/DSC_0726-2.jpg" alt="Umesh Patel Profile Photo">
+                        </div>
+                        <div class="profile-info">
+                            <h3>Umesh Patel</h3>
+                            <p>Staff Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights / Specialties -->
+        <section class="section" id="highlights">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-tag">Core Strengths</div>
+                    <h2 class="section-title">Technical Expertise & Capabilities</h2>
+                    <p class="section-desc">Delivering high-throughput, fault-tolerant microservices and modern cloud infrastructure.</p>
+                </div>
+
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Distributed Systems</h3>
+                        <p>Architecting user management & identity systems, multi-threaded Kafka batch/event pipelines for real-time indexing and downstream processing at scale.</p>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Search & Storage Optimization</h3>
+                        <p>Leading Elasticsearch migrations, query optimization, PL/SQL stored procedures, and read-optimized data modeling for massive digital collections.</p>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>GenAI Developer Innovation</h3>
+                        <p>Leveraging GenAI tools & LLM prompt workflows for automated user story analysis, test failure diagnosis, and flaky test mitigation.</p>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h3>Cloud & Containerization</h3>
+                        <p>Designing cloud-native runtime environments using AWS, Docker, Kubernetes, microservices architecture, and Jenkins CI/CD automation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Experience Timeline -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-tag">Career History</div>
+                    <h2 class="section-title">Professional Experience</h2>
+                    <p class="section-desc">Track record of technical leadership across eCommerce, Financial Services, Telecommunications, and Health Tech.</p>
+                </div>
+
+                <!-- Interactive Filter -->
+                <div class="timeline-filter">
+                    <button class="filter-btn active" data-filter="all">All Roles</button>
+                    <button class="filter-btn" data-filter="eBay">eBay</button>
+                    <button class="filter-btn" data-filter="Moody's">Moody's Analytics</button>
+                    <button class="filter-btn" data-filter="Walmart">Walmart Labs</button>
+                    <button class="filter-btn" data-filter="Visa">Visa Inc</button>
+                    <button class="filter-btn" data-filter="CVS">CVS Health</button>
+                    <button class="filter-btn" data-filter="AT&T">AT&T</button>
+                </div>
+
+                <div class="timeline">
+                    <!-- Role 1: eBay -->
+                    <div class="timeline-item" data-company="eBay" data-tags="Java, Kotlin, Spring Boot, Kafka, Elasticsearch, GenAI, GraphQL">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Staff Software Engineer</h3>
+                                    <div class="company-name"><i class="fas fa-building"></i> eBay | San Jose, CA</div>
+                                </div>
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> July 2019 – April 2025</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Architected and deployed enterprise-level applications using Spring Boot, Java, and Kotlin.</li>
+                                <li>Spearheaded the design and implementation of an enterprise user management system, enhancing scalability and UX for millions of active users.</li>
+                                <li>Engineered Kafka-based event and batch processing systems to handle asynchronous collection imports, card updates, indexing workflows, and downstream events.</li>
+                                <li>Led Elasticsearch migration and performance validation for Collection Hub, optimizing search, filtering, and read-heavy collection access.</li>
+                                <li>Utilized GenAI tools and custom LLM prompts to analyze user stories, acceptance criteria, test failure logs, and flaky test patterns, significantly reducing investigation overhead.</li>
+                            </ul>
+                            <div class="tech-stack-tags">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Apache Kafka</span>
+                                <span class="tech-tag">Elasticsearch</span>
+                                <span class="tech-tag">GraphQL</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">GenAI & LLMs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role 2: Moody's Analytics -->
+                    <div class="timeline-item" data-company="Moody's" data-tags="Python, Flask, AWS, Docker, Kubernetes, MongoDB, Jenkins">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Senior Software Developer</h3>
+                                    <div class="company-name"><i class="fas fa-chart-line"></i> Moody’s Analytics | San Francisco, CA</div>
+                                </div>
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> Nov 2017 – June 2019</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Migrated legacy financial services to cloud-native microservice architecture, improving system scalability and runtime performance.</li>
+                                <li>Defined cloud runtime architecture leveraging AWS cloud services, Docker containers, and Kubernetes orchestrations.</li>
+                                <li>Engineered Python & Flask microservices integrated with MongoDB for backend data validation and analytics reporting.</li>
+                                <li>Developed automated PyCharm utility scripts for backend REST API validation and managed Jenkins CI/CD pipelines.</li>
+                            </ul>
+                            <div class="tech-stack-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Jenkins</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role 3: Walmart Labs -->
+                    <div class="timeline-item" data-company="Walmart" data-tags="Java, Spring, Analytics, Omniture, Jenkins">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Senior Software Engineer</h3>
+                                    <div class="company-name"><i class="fas fa-shopping-cart"></i> Walmart Labs | San Bruno, CA</div>
+                                </div>
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> Sep 2016 – Nov 2017</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Collaborated closely with site analytics teams to build a Spring framework validation pipeline for Adobe Omniture telemetry on samsclub.com.</li>
+                                <li>Configured Jenkins Continuous Integration jobs for automated build creation, testing, and deployment execution.</li>
+                                <li>Contributed to core in-house framework design and scalability improvements.</li>
+                            </ul>
+                            <div class="tech-stack-tags">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Framework</span>
+                                <span class="tech-tag">Adobe Omniture</span>
+                                <span class="tech-tag">Jenkins</span>
+                                <span class="tech-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role 4: Visa Inc -->
+                    <div class="timeline-item" data-company="Visa" data-tags="Java, REST APIs, Apple Pay, TestNG, JMeter">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Technical Lead</h3>
+                                    <div class="company-name"><i class="far fa-credit-card"></i> Visa Inc | Foster City, CA</div>
+                                </div>
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> Jun 2015 – Sep 2016</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Managed builds, code branching strategy, release configurations, and code delivery deployment pipelines.</li>
+                                <li>Designed and developed core RESTful APIs integrating payment services with Apple Pay features and international banking institutions.</li>
+                                <li>Implemented rigorous unit and automated performance testing suites using Java, TestNG, and JMeter.</li>
+                            </ul>
+                            <div class="tech-stack-tags">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">Apple Pay Integration</span>
+                                <span class="tech-tag">TestNG</span>
+                                <span class="tech-tag">JMeter</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role 5: CVS Health -->
+                    <div class="timeline-item" data-company="CVS" data-tags="Informatica, ETL, Batch Processing, Production Support">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Production Support Engineer</h3>
+                                    <div class="company-name"><i class="fas fa-heartbeat"></i> CVS Health | Buffalo Grove, IL</div>
+                                </div>
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> Nov 2014 – Jun 2015</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Supported mission-critical customer applications, resolving high-priority incidents and maintaining SLA uptime.</li>
+                                <li>Managed Informatica PowerCenter (v7.1.4) workflows, ETL architecture, and reusability components.</li>
+                                <li>Monitored batch job processing schedules, release activities, and system health.</li>
+                            </ul>
+                            <div class="tech-stack-tags">
+                                <span class="tech-tag">Informatica PowerCenter</span>
+                                <span class="tech-tag">ETL Architecture</span>
+                                <span class="tech-tag">Batch Processing</span>
+                                <span class="tech-tag">Production Support</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role 6: AT&T -->
+                    <div class="timeline-item" data-company="AT&T" data-tags="Java, Hibernate, Oracle, PL/SQL, SOAP, REST">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Java Developer</h3>
+                                    <div class="company-name"><i class="fas fa-phone-alt"></i> AT&T | Middletown, NJ</div>
+                                </div>
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> April 2014 – Nov 2014</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Participated in TDD implementation and object-oriented design of the enterprise INSTAR application.</li>
+                                <li>Wrote complex PL/SQL stored procedures, functions, triggers, and configured Hibernate ORM deployment descriptors.</li>
+                                <li>Generated SOA, WSDL, SOAP, and RESTful web service classes for data exchange.</li>
+                            </ul>
+                            <div class="tech-stack-tags">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Hibernate</span>
+                                <span class="tech-tag">Oracle PL/SQL</span>
+                                <span class="tech-tag">SOAP / WSDL</span>
+                                <span class="tech-tag">RESTful APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Matrix -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-tag">Tech Stack</div>
+                    <h2 class="section-title">Skills & Capabilities Matrix</h2>
+                    <p class="section-desc">A comprehensive view of frameworks, languages, platforms, and methodologies.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-code"></i></div>
+                            <h3>Backend & Languages</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-chip">Java</span>
+                            <span class="skill-chip">Kotlin</span>
+                            <span class="skill-chip">Spring Boot</span>
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">Flask</span>
+                            <span class="skill-chip">REST APIs</span>
+                            <span class="skill-chip">GraphQL</span>
+                            <span class="skill-chip">Hibernate</span>
+                            <span class="skill-chip">Microservices</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-database"></i></div>
+                            <h3>Data & Messaging</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-chip">Apache Kafka</span>
+                            <span class="skill-chip">Elasticsearch</span>
+                            <span class="skill-chip">MongoDB</span>
+                            <span class="skill-chip">Oracle</span>
+                            <span class="skill-chip">PL/SQL</span>
+                            <span class="skill-chip">Hibernate ORM</span>
+                            <span class="skill-chip">Informatica ETL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-cloud"></i></div>
+                            <h3>Cloud & DevOps</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-chip">AWS</span>
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">Kubernetes</span>
+                            <span class="skill-chip">Jenkins CI/CD</span>
+                            <span class="skill-chip">Git / GitHub</span>
+                            <span class="skill-chip">PyCharm IDE</span>
+                            <span class="skill-chip">Toad for Oracle</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-robot"></i></div>
+                            <h3>AI & Quality Engineering</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-chip">GenAI Tools</span>
+                            <span class="skill-chip">LLM Prompts</span>
+                            <span class="skill-chip">Test Failure Analytics</span>
+                            <span class="skill-chip">TestNG</span>
+                            <span class="skill-chip">JMeter</span>
+                            <span class="skill-chip">TDD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Qualifications -->
+        <section class="section" id="education">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-tag">Academic Background</div>
+                    <h2 class="section-title">Education & Professional Credentials</h2>
+                    <p class="section-desc">Academic foundation in Electrical, Electronics, & Advanced Computer Engineering.</p>
+                </div>
+
+                <div class="edu-grid">
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="edu-details">
+                            <h3>M.S. in Electrical Engineering</h3>
+                            <div class="edu-school">University of Bridgeport, CT</div>
+                            <p class="edu-desc">Advanced graduate studies focused on electrical engineering, systems design, and computer architecture.</p>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class="fas fa-university"></i></div>
+                        <div class="edu-details">
+                            <h3>B.E. in Electronics & Communication</h3>
+                            <div class="edu-school">The Oxford College of Engineering</div>
+                            <p class="edu-desc">Bachelor of Engineering degree in electronics, communications, and digital logic design.</p>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="edu-details">
+                            <h3>UC Berkeley Extension Certification</h3>
+                            <div class="edu-school">University of California, Berkeley</div>
+                            <p class="edu-desc">Advanced Java: Developing with APIs (EL ENG X436.4-003) certification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-tag">Connect</div>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-desc">Open to discussions regarding engineering leadership, cloud architecture, and high-scale systems.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card" onclick="copyEmail()">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email</h4>
+                        <p>umeshsoftdev@gmail.com</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-indigo); margin-top: 0.5rem; display: block;">Click to Copy</span>
+                    </div>
+
+                    <a href="tel:6506659983" class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h4>Phone</h4>
+                        <p>+1 (650) 665-9983</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-indigo); margin-top: 0.5rem; display: block;">Click to Call</span>
+                    </a>
+
+                    <a href="https://linkedin.com/in/patelumesh" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <h4>LinkedIn</h4>
+                        <p>linkedin.com/in/patelumesh</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-indigo); margin-top: 0.5rem; display: block;">Visit Profile</span>
+                    </a>
+
+                    <a href="https://github.com/Umesh2Patel" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <h4>GitHub</h4>
+                        <p>github.com/Umesh2Patel</p>
+                        <span style="font-size: 0.8rem; color: var(--primary-indigo); margin-top: 0.5rem; display: block;">View Code</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/Umesh2Patel" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/patelumesh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://medium.com/@umeshp2003" target="_blank" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                <a href="mailto:umeshsoftdev@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Umesh Patel. All rights reserved. | <a href="http://umeshpatel.info" style="color: var(--text-secondary); text-decoration: none;">umeshpatel.info</a></p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>
