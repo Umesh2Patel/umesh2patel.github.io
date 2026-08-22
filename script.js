@@ -1,48 +1,45 @@
 /* ==========================================================================
-   Umesh Patel - Portfolio Interactivity & Controls
+   Umesh Patel - Portfolio interactivity
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Header Scroll Shadow Effect
+    // Header border on scroll
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-    // Mobile Menu Toggle
+    // Mobile menu
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
 
     if (mobileToggle && navLinks) {
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-open');
+        const setOpen = (open) => {
+            navLinks.classList.toggle('mobile-open', open);
             const icon = mobileToggle.querySelector('i');
-            if (icon) {
-                if (navLinks.classList.contains('mobile-open')) {
-                    icon.className = 'fas fa-times';
-                } else {
-                    icon.className = 'fas fa-bars';
-                }
-            }
-        });
-
-        // Close mobile nav on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('mobile-open');
-                const icon = mobileToggle.querySelector('i');
-                if (icon) icon.className = 'fas fa-bars';
-            });
-        });
+            if (icon) icon.className = open ? 'fas fa-times' : 'fas fa-bars';
+        };
+        mobileToggle.addEventListener('click', () => setOpen(!navLinks.classList.contains('mobile-open')));
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
     }
 
-    // Interactive Experience Filter
+    // Active nav link highlighting
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const linkFor = (id) => navLinks?.querySelector(`a[href="#${id}"]`);
+    if (sections.length && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navLinks.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+                linkFor(entry.target.id)?.classList.add('active');
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(s => observer.observe(s));
+    }
+
+    // Experience filter
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineEntries = document.querySelectorAll('.timeline-item, .timeline-divider');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -50,83 +47,65 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             const filter = btn.getAttribute('data-filter');
-
-            timelineItems.forEach(item => {
-                if (filter === 'all') {
-                    item.style.display = 'block';
-                    setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
-                } else {
-                    const company = item.getAttribute('data-company');
-                    const tags = item.getAttribute('data-tags') || '';
-                    if (company === filter || tags.toLowerCase().includes(filter.toLowerCase())) {
-                        item.style.display = 'block';
-                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; }, 50);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        setTimeout(() => { item.style.display = 'none'; }, 300);
-                    }
-                }
+            timelineEntries.forEach(item => {
+                const company = item.getAttribute('data-company') || '';
+                const tags = (item.getAttribute('data-tags') || '').toLowerCase();
+                const show = filter === 'all' || company === filter || tags.includes(filter.toLowerCase());
+                item.classList.toggle('hidden', !show);
             });
         });
     });
 
-    // One-Click Email Copying & Toast Notification
-    window.copyEmail = function(emailStr = 'umeshsoftdev@gmail.com') {
-        navigator.clipboard.writeText(emailStr).then(() => {
-            showToast('Email address copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-            showToast(`Contact: ${emailStr}`);
-        });
+    // Copy email + toast
+    window.copyEmail = function (emailStr = 'umeshsoftdev@gmail.com') {
+        navigator.clipboard.writeText(emailStr)
+            .then(() => showToast('Email address copied to clipboard'))
+            .catch(() => showToast(`Email: ${emailStr}`));
     };
 
+    let toastTimer;
     function showToast(message) {
         let toast = document.getElementById('toast');
         if (!toast) {
             toast = document.createElement('div');
             toast.id = 'toast';
             toast.className = 'toast';
-            toast.innerHTML = `<i class="fas fa-check-circle" style="color: var(--accent-emerald);"></i> <span id="toastMsg"></span>`;
+            toast.innerHTML = '<i class="fas fa-check-circle" style="color: var(--green);"></i> <span id="toastMsg"></span>';
             document.body.appendChild(toast);
         }
-        document.getElementById('toastMsg').innerText = message;
+        document.getElementById('toastMsg').textContent = message;
         toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3500);
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
     }
 
-    // Number Counter Animation for Stats
-    const statCounters = document.querySelectorAll('.counter');
+    // Stat counters
+    const counters = document.querySelectorAll('.counter');
     let animated = false;
 
     function animateStats() {
         if (animated) return;
         const heroStats = document.querySelector('.hero-stats');
         if (!heroStats) return;
-
         const rect = heroStats.getBoundingClientRect();
-        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            statCounters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const speed = 200;
-                const updateCount = () => {
-                    const count = +counter.innerText.replace('+', '');
-                    const inc = target / speed;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc) + (counter.getAttribute('data-suffix') || '');
-                        setTimeout(updateCount, 15);
-                    } else {
-                        counter.innerText = target + (counter.getAttribute('data-suffix') || '');
-                    }
-                };
-                updateCount();
-            });
-            animated = true;
-        }
+        if (rect.top > window.innerHeight || rect.bottom < 0) return;
+        animated = true;
+
+        counters.forEach(counter => {
+            const target = Number(counter.dataset.target) || 0;
+            const suffix = counter.dataset.suffix || '';
+            const duration = 900;
+            const start = performance.now();
+            const tick = (now) => {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                counter.textContent = Math.round(target * eased) + suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        });
     }
 
-    window.addEventListener('scroll', animateStats);
+    window.addEventListener('scroll', animateStats, { passive: true });
     animateStats();
 });
